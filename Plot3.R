@@ -1,11 +1,11 @@
 householddata <- "household_power_consumption.txt"
 data <- read.table(householddata, header=TRUE, sep=";", stringsAsFactors=FALSE, dec=".")
 FebData <- data[data$Date %in% c("1/2/2007","2/2/2007") ,]
-datetime <- strptime(paste(subSetData$Date, subSetData$Time, sep=" "), "%d/%m/%Y %H:%M:%S")
-GAP <- as.numeric(subSetData$Global_active_power)
-subMetering1 <- as.numeric(subSetData$Sub_metering_1)
-subMetering2 <- as.numeric(subSetData$Sub_metering_2)
-subMetering3 <- as.numeric(subSetData$Sub_metering_3)
+datetime <- strptime(paste(FebData$Date, subSetData$Time, sep=" "), "%d/%m/%Y %H:%M:%S")
+GAP <- as.numeric(FebData$Global_active_power)
+subMetering1 <- as.numeric(FebData$Sub_metering_1)
+subMetering2 <- as.numeric(FebData$Sub_metering_2)
+subMetering3 <- as.numeric(FebData$Sub_metering_3)
 
 
 
